@@ -70,6 +70,16 @@ Allows members of the `JEA_WindowsUpdate` security group to manage Windows updat
 - `Restart-Computer`
 - External: `HOSTNAME.EXE`
 
+### [AdminMode.pssc](AdminMode.pssc)
+Allows members of the `JEA_AdminMode` security group to create temporary elevated admin users and start programs with elevated privileges via scheduled tasks.
+
+**Available Commands:**
+- Modules: `Microsoft.PowerShell.LocalAccounts`, `ScheduledTasks` (imported)
+- Custom Function: `Start-ElevatedProcess`
+- FileSystem provider access
+
+**Note:** Requires ABTokenTools (`C:\Program Files\ABTokenTools\RunJob.exe`) and registry configuration at `HKLM:\SOFTWARE\AB\AdminMode\`.
+
 ## Role Capabilities
 
 Each role capability file in the [RoleCapabilities/](RoleCapabilities/) directory defines the specific commands, modules, and external executables available for a particular role. These files are referenced by the corresponding session configuration files.
