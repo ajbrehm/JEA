@@ -8,19 +8,34 @@ JEA provides a security layer by restricting what authenticated users can do in 
 
 ## Session Configurations
 
-### [WindowsUpdate.pssc](WindowsUpdate.pssc)
-Allows members of the `JEA_WindowsUpdate` security group to manage Windows updates using the PSWindowsUpdate module. Users can run Windows Update cmdlets and restart the computer.
+### [Dism.pssc](Dism.pssc)
+Allows members of the `JEA_Dism` security group to install and remove Windows components and perform housekeeping tasks.
 
 **Available Commands:**
-- All `*-WindowsUpdate` and `*-WU*` cmdlets
-- `Restart-Computer`
-- External: `HOSTNAME.EXE`
+- All `*-WindowsCapability*` cmdlets from the Dism module
+- External: `dism.exe`
 
-### [SmbShare.pssc](SmbShare.pssc)
-Allows members of the `JEA_SmbShare` security group to manage network shares (create, modify, and remove SMB shares).
+### [LocalAccounts.pssc](LocalAccounts.pssc)
+Allows members of the `JEA_LocalAccounts` security group to create and modify local users and local group memberships.
 
 **Available Commands:**
-- All `*-SmbShare*` cmdlets
+- All `*-LocalGroup*` cmdlets
+- All `*-LocalUser` cmdlets
+
+### [Process.pssc](Process.pssc)
+Allows members of the `JEA_Process` security group to query and manage processes.
+
+**Available Commands:**
+- `Get-Process`
+- `Stop-Process`
+
+### [ScheduledTasks.pssc](ScheduledTasks.pssc)
+Allows members of the `JEA_ScheduledTasks` security group to create, modify scheduled tasks, and manage task permissions using user account credentials.
+
+**Available Commands:**
+- `Get-ScheduledTask`
+- `Get-Help`
+- Custom Functions: `Register-RestrictedScheduledTask`, `Get-ScheduledTaskPermissions`, `Claim-ScheduledTask`
 
 ### [Service.pssc](Service.pssc)
 Allows members of the `JEA_Service` security group to query, start, stop, and restart services.
@@ -30,6 +45,20 @@ Allows members of the `JEA_Service` security group to query, start, stop, and re
 - `Start-Service`
 - `Restart-Service`
 - `Stop-Service`
+
+### [SmbShare.pssc](SmbShare.pssc)
+Allows members of the `JEA_SmbShare` security group to manage network shares (create, modify, and remove SMB shares).
+
+**Available Commands:**
+- All `*-SmbShare*` cmdlets
+
+### [WindowsUpdate.pssc](WindowsUpdate.pssc)
+Allows members of the `JEA_WindowsUpdate` security group to manage Windows updates using the PSWindowsUpdate module.
+
+**Available Commands:**
+- All `*-WindowsUpdate` and `*-WU*` cmdlets
+- `Restart-Computer`
+- External: `HOSTNAME.EXE`
 
 ## Role Capabilities
 
@@ -43,4 +72,4 @@ These configurations are deployed to PowerShell endpoints to enable secure, dele
 Enter-PSSession -ComputerName <Server> -ConfigurationName <ConfigName>
 ```
 
-Where `<ConfigName>` is the name of the registered session configuration (e.g., `WindowsUpdate`, `SmbShare`, or `Service`).
+Where `<ConfigName>` is the name of the registered session configuration (e.g., `Dism`, `LocalAccounts`, `Process`, `ScheduledTasks`, `Service`, `SmbShare`, or `WindowsUpdate`).
