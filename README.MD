@@ -52,6 +52,16 @@ Allows members of the `JEA_SmbShare` security group to manage network shares (cr
 **Available Commands:**
 - All `*-SmbShare*` cmdlets
 
+### [IIS.pssc](IIS.pssc)
+Allows members of the `JEA_IIS` security group to manage Internet Information Services (IIS) using the IISAdministration and WebAdministration modules.
+
+**Available Commands:**
+- Modules: `IISAdministration`, `WebAdministration` (imported)
+- All `*-IIS*` and `*-Web*` cmdlets
+- External: `C:\Windows\System32\iisreset.exe`
+
+Recommendation: Install the Web Management Service for remote IIS management.
+
 ### [WindowsUpdate.pssc](WindowsUpdate.pssc)
 Allows members of the `JEA_WindowsUpdate` security group to manage Windows updates using the PSWindowsUpdate module.
 
