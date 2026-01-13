@@ -35,6 +35,7 @@ Allows members of the `JEA_ScheduledTasks` security group to create, modify sche
 **Available Commands:**
 - `Get-ScheduledTask`
 - `Get-Help`
+- `Enable-ScheduledTask` and `Disable-ScheduledTask`
 - Custom Functions: `Register-RestrictedScheduledTask`, `Get-ScheduledTaskPermissions`, `Claim-ScheduledTask`
 
 ### [Service.pssc](Service.pssc)
