@@ -36,7 +36,7 @@ Allows members of the `JEA_ScheduledTasks` security group to create, modify sche
 - `Get-ScheduledTask`
 - `Get-Help`
 - `Enable-ScheduledTask` and `Disable-ScheduledTask`
-- Custom Functions: `Register-RestrictedScheduledTask`, `Get-ScheduledTaskPermissions`, `Claim-ScheduledTask`
+- Custom Functions: `Register-RestrictedScheduledTask`, `Get-ScheduledTaskPermissions`, `Claim-ScheduledTask`, `Set-ScheduledTaskPermissions`
 
 ### [Service.pssc](Service.pssc)
 Allows members of the `JEA_Service` security group to query, start, stop, and restart services.
