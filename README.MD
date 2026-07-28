@@ -47,6 +47,14 @@ Allows members of the `JEA_Service` security group to query, start, stop, and re
 - `Restart-Service`
 - `Stop-Service`
 
+### [Net.pssc](Net.pssc)
+Allows members of the `JEA_Net` security group to configure network adapters and DNS settings.
+
+**Available Commands:**
+- `*-Net*`
+- `*-DnsClient*`
+
+
 ### [SmbShare.pssc](SmbShare.pssc)
 Allows members of the `JEA_SmbShare` security group to manage network shares (create, modify, and remove SMB shares).
 
